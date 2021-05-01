@@ -25,14 +25,14 @@ const questions = [
         validate: (value) => {if(value){return true} else {return 'Input a response to continue.'}},
     },
     { 
-        type: 'input',
+        type: 'list',
         name: 'license',
-        message: 'Provide the license for the application.',
-        validate: (value) => {if(value){return true} else {return 'Input a response to continue.'}},
+        message: 'Select the license for your application:',
+        choices: ['mit','mpl','epl'],
     },
     { 
         type: 'input',
-        name: 'contributing',
+        name: 'contributors',
         message: 'What are the project guidelines?',
         validate: (value) => {if(value){return true} else {return 'Input a response to continue.'}},
     },
@@ -44,7 +44,7 @@ const questions = [
     },
     { 
         type: 'input',
-        name: 'github',
+        name: 'user',
         message: 'What is your GitHub user name?',
         validate: (value) => {if(value){return true} else {return 'Input a response to continue.'}},
     },
@@ -52,6 +52,12 @@ const questions = [
         type: 'input',
         name: 'repo',
         message: 'Provide a link to your repository:',
+        validate: (value) => {if(value){return true} else {return 'Input a response to continue.'}},
+    },
+    {
+        type: 'input',
+        name: 'badge',
+        message: 'Provide badge link(s) here:',
         validate: (value) => {if(value){return true} else {return 'Input a response to continue.'}},
     },
 ];

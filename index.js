@@ -12,25 +12,8 @@ function init() {
     fs.writeFile('README.md', generate(data), () => {
         console.log('README.md file written successfully');
         })
-    });
+    })
 };
 
 // Function call to initialize app
-init();
-
-/*
-inquirer
-    .prompt(questions)
-    .then((data) => {
-    // Creates a README file and pulls 'data' from Questions Array
-    fs.writeFile('README.md', generate(data), () => {
-        console.log('README.md file written successfully');
-    })
-});
-
-// Function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
-*/
+init()

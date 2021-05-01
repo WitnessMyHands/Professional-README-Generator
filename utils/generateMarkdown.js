@@ -1,59 +1,63 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// Select License and Badge
 function renderLicenseBadge(license) {
-  // [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+  if(license === 'mit') return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+  if(license === 'mpl') return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
+  if(license === 'epl') return '[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)';
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-// function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-// function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
+// Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # **${data.title}**
 
   ## Description
+
   ${data.description}
 
   ## Table of Contents
   
-  -[Description](#Description)
-  -[Installation](#Installation)
-  -[Usage](#Usage)
-  -[License](#License)
-  -[Contributing](#Contributing)
-  -[Tests](#Tests)
-  -[Github](#Github)
-  -[Repository](#Repo)
+  - [Description](#Description)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [License](#License)
+  - [Contributors](#Contributors)
+  - [Tests](#Tests)
+  - [Questions](#Questions)
+  - [User](#User)
+  - [Repository](#Repository)
+  - [Badges](#Badges)
 
   ## Installation
+
   ${data.installation}
 
   ## Usage
+
   ${data.usage}
   
   ## License
-  ${data.license}
+
+  ${renderLicenseBadge(data.license)}
 
   ## Contributors
-  ${data.contributing}
 
-  ## Project Tests
+  ${data.contributors}
+
+  ## Tests
+
   ${data.tests}
 
   ## Questions
   *Please contact ${data.user} via GitHub with any questions or concerns.*
 
-  ### GitHub Contact Information
-  - ${data.github}
-
+  ### User
+  - ${data.user}
   ### Repository
   - ${data.repo}
+
+  ### Badges
+
+  ${data.badge}
 `;
 }
 
